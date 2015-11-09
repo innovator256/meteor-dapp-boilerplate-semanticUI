@@ -1,36 +1,35 @@
 <template name="components_accounts">
-    <div class="panel panel-default panel-dapp">
-        <div class="panel-heading">
+    <div class="ui segment">
+        <div class="ui header">
             {{i18n 'dapp.components.accounts.header'}}
         </div>
-        <div class="panel-body">
+        <div class="ui segment">
             <p>{{i18n 'dapp.components.accounts.description'}}</p>
         </div>
         <div class="table-responsive">
-            <table class="table table-bordered">
-                <thead>
-                    <tr>
-                        <td>#</td>
-                        <td>{{i18n 'dapp.app.headers.identicon'}}</td>
-                        <td>{{i18n 'dapp.app.headers.address'}}</td>
-                        <td>{{i18n 'dapp.app.headers.balance'}}</td>
-                    </tr>
-                </thead>
-                <tbody>
-                    {{#each accounts}}
-                    <tr>
-                        <td>{{number}}</td>
-                        <td>
-                            {{> dapp_identicon identity=address class="dapp-small"}}
-                        </td>
-                        <td> 
-                            <input type="text" value="{{address}}" class="web3_address"/>
-                        </td>
-                        <td>{{fromWei balance 'ether'}} ether</td>
-                    </tr>
-                    {{/each}}
-                </tbody>
-            </table>
+
+          <table class="ui celled striped selectable inverted table">
+            <thead>
+                <tr><th colspan="3">
+                    <td>#</td>
+                    <td>{{i18n 'dapp.app.headers.identicon'}}</td>
+                    <td>{{i18n 'dapp.app.headers.address'}}</td>
+                    <td>{{i18n 'dapp.app.headers.balance'}}</td>
+              </th>
+            </tr></thead>
+            <tbody>
+              {{#each accounts}}
+              <tr>
+                <td class="collapsing">
+                   {{number}}
+                </td>
+                <td>{{> dapp_identicon identity=address class="dapp-small"}}</td>
+                <td class="right aligned collapsing"><input type="text" value="{{address}}" class="web3_address"/></td>
+                  <td class="right aligned collapsing">{{fromWei balance 'ether'}} ether</td>
+              </tr>
+              {{/each}}
+            </tbody>  
+          </table>
         </div>
     </div>
 </template>

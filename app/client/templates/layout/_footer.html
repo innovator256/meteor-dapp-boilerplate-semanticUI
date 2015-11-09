@@ -1,21 +1,21 @@
 <template name="layout_footer">
-   <footer class="footernav">
-        <ul class="list-inline">
-            <li>
-                <a href="{{ pathFor 'view1' }}">
-                    {{{i18n 'dapp.app.buttons.view1'}}}
-                </a>
-            </li>
-            <li class="footer-menu-divider">⋅</li>
-            <li>
-                <a href="{{ pathFor 'view2' }}">
-                    {{{i18n 'dapp.app.buttons.view2'}}}
-                </a>
-            </li>
-        </ul>
-       
-        <p class="copyright text-muted small">
-            {{{i18n 'dapp.app.copyright'}}}
-        </p>
-    </footer>
+
+  <div class="ui divider"></div>
+
+  <div class="ui inverted main menu">
+
+
+
+
+            <a href="/"  class="item ui header">Blog Template</a>
+            <a href="{{ pathFor 'view1' }}" class="item">{{{i18n 'dapp.app.buttons.view1'}}}</a>
+            <a href="{{ pathFor 'view2' }}" class="item">{{{i18n 'dapp.app.buttons.view2'}}}</a>
+
+                  <a href="#" class="item"><i class="circular inverted lighter twitter icon"></i></a>
+                  <a href="#" class="item"><i class="circular inverted lighter facebook icon"></i></a>
+                  <a href="#" class="item"><i class="circular inverted lighter mail icon"></i></a>
+
+                  <p class="copyright item">{{{i18n 'dapp.app.copyright'}}}</p>
+                  
+    </div>
 </template>

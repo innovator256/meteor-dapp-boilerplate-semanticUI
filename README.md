@@ -1,15 +1,15 @@
 # meteor-dapp-boilerplate
 
-A starting point for decentralized MeteorJS applications. Includes Ethereum.js, iron-router, Bootstrap 3, Font Awesome, LESS and more.
+A starting point for decentralized MeteorJS applications. Includes Ethereum.js, iron-router, Official Semantic UI Integration for Meteor, Font Awesome, LESS and more.
 
-**Based off of [Differential's meteor-boilerplate](https://github.com/Differential/meteor-boilerplate) and [Ethereum's meteor-dapp-wallet](https://github.com/ethereum/meteor-dapp-wallet). Please note that this boilerplate is still in Alpha.
+** Modification Based off of [SilentCicero's](https://github.com/SilentCicero/meteor-dapp-boilerplate) which is based on [Differential's meteor-boilerplate](https://github.com/Differential/meteor-boilerplate) and [Ethereum's meteor-dapp-wallet](https://github.com/ethereum/meteor-dapp-wallet). Please note that this boilerplate is still in Alpha.
 
 * [Alpha](#alpha)
 * [Included Packages](#included-packages)
 * [Installation](#installation)
 * [Deployment](#deployment)
 * [File Structure](#file-structure)
-* [Bootstrap and Less](#bootstrap-and-less)
+* [Official Semantic UI and Less](#bootstrap-and-less)
 * [Favicons and Touch Icons](#favicons-and-touch-icons)
 * [Private Network](#private-network)
 * [Unit Testing](#unit-testing)
@@ -26,9 +26,10 @@ A starting point for decentralized MeteorJS applications. Includes Ethereum.js, 
   * [iron:router](https://github.com/EventedMind/iron-router)
   * [zimme:iron-router-active](https://github.com/zimme/meteor-iron-router-active)
   * [yasinuslu:blaze-meta](https://github.com/yasinuslu/blaze-meta)
-* [Less](http://lesscss.org)
-  * [Bootstrap](http://getbootstrap.com)
+* [Theming and style]
+  * [Official Semantic UI](http://semantic-ui.com/)
   * [Font Awesome](http://fontawesome.io)
+
 * [Ethereum](http://ethereum.org)
   * [ethereum:elements](https://github.com/ethereum/meteor-package-elements)
   * [ethereum:tools](https://github.com/ethereum/meteor-package-tools)
@@ -50,17 +51,14 @@ A starting point for decentralized MeteorJS applications. Includes Ethereum.js, 
   * [frozeman:storage](https://github.com/frozeman/meteor-storage)
   * [frozeman:template-var](https://github.com/frozeman/meteor-template-var)
   * [frozeman:reactive-timer](https://github.com/frozeman/meteor-reactive-timer)
-  
-## <a name="alpha"></a> Hosted Alpha
 
-http://meteor-dapp-boilerplate.meteor.com
 
 ## <a name="installation"></a> Installation
 
 Clone this repo
 
-    $ git clone http://github.com/SilentCicero/meteor-dapp-boilerplate
-    
+    $ git clone gitUrl ***
+
 Create an account with geth (create a passphrase):
 
     $ geth account new
@@ -71,41 +69,21 @@ Start a local geth node instace (then hit 'enter' to promt passphrase input):
 
 Start the app using Meteor
 
-    $ cd meteor-dapp-boilerplate/app
+    $ cd meteor-dapp-boilerplate-semanticUI/app
     $ meteor
+##<a name="Hosted-Alpha"></a>Hosted Alpha   
+----
+meteor-semanticui-dapp-boilerplate.meteor.com   
 
 ## <a name="file-structure"></a> File Structure
 
-This file structure is largley based off of Differentials boilerplate, but with client-only directories. Client-only files are stored in the `client` directory. The `public` directory is for publicly accessible assets such as images and fonts. The `i18n` directory is for language files.
+This file structure is largley modification of SilentCicero's boilerplate which in turn is based on Differentials boilerplate, but with client-only directories. Client-only files are stored in the `client` directory. The `public` directory is for publicly accessible assets such as images and fonts. The `i18n` directory is for language files.
 
-## <a name="bootstrap-and-less"></a> Bootstrap and LESS
+## <a name="Semantic-ui-and-less"></a> Semantic-ui and LESS
 
-The majority of Bootstrap can be customized with LESS variables. If you look in `client/stylesheets/base/lib/bootstrap/variables.import.less` you will see a slew of configuration variables that can be tweaked to drastically change the look and feel of your site without having to write a single line of CSS.
+Since flemay:less-autoprefixer compiles LESS files you don't need any other less package.
 
-However we should avoid modifying the core Bootstrap Less files (in case we want to update them later), and should instead override the variables in our own LESS files.
-
-For example, to change the color of all primary buttons and links, simply add a `@brand-primary` variable to `stylesheets/base/variables.import.less`:
-
-```
-// variables.import.less
-@brand-primary: #DC681D;
-```
-
-If you'd like to override a feature of Bootstrap that can't be modified using variables, simply create a new file in the `client/stylesheets/components` directory named after the corresponding Bootstrap component (eg. `buttons` in this case), and make your changes there.
-
-```
-// buttons.import.less
-.btn {
-  text-transform: uppercase;
-}
-```
-
-After your file is ready, you need to import it into `client/stylesheets/base/global.less`. So, you would add in this statement:
-```
-@import '@{components}/buttons.import.less';
-```
-
-The reason that this is done is to avoid any issues when the LESS files are compiled into CSS. That way, if one component relies on another or you want a certain order for your components, you can avoid any issues.
+please see [Semantic-UI-Meteor docummentatio](https://github.com/Semantic-Org/Semantic-UI-Meteor) for file structure and other important directions
 
 
 ## <a name="favicons-and-touch-icons"></a> Favicons and Touch Icons
@@ -125,7 +103,7 @@ All tests are stored in the `app/tests` directory. By default the [Mocha](https:
 Add Mocha/Velocity
 
     $ meteor add mike:mocha
-    
+
 Remove Mocha/Velocity
 
     $ meteor remove mike:mocha

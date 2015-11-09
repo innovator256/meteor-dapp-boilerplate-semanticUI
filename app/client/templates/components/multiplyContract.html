@@ -1,69 +1,69 @@
 <template name="components_multiplyContract">
-    <div class="panel panel-default panel-dapp">
-        <div class="panel-heading">
+    <div class="ui segment">
+        <div class="ui header">
             {{i18n 'dapp.components.multiplyContract.header'}}
         </div>
-        <div class="panel-body">
+        <div class="ui secondary segment">
             {{#with TemplateVar.get 'state'}}
                 {{#if isError}}
-                    <div class="alert alert-warning">
+                    <div class="ui error message">
                         There was an error deploying your contract.
                         The error was: "{{error}}".
                     </div>
                 {{/if}}
-            
+
                 {{#if isMining}}
-                    <div class="alert alert-info">
+                    <div class="ui yellow message">
                         Your contract is being mined...
                         <span class="badge text-right">
                             <i class="fa fa-cog fa-spin"></i>
                         </span>
                     </div>
                 {{/if}}
-            
+
                 {{#if isMined}}
-                    <div class="alert alert-success">
+                    <div class="ui success message">
                         Your MultiplyContract has been mined!
                     </div>
-            
+
                     <hr />
-            
+
                     <label>
                         Your contract has been deployed to this address:
                     </label>
-            
-                    <input type="text" class="form-control" 
+
+                    <input type="text" class="form-control"
                            value="{{address}}" placeholder="Address" />
-            
+
                     <br />
-            
+
                     <pre class="well well-info">{{source}}</pre>
-                    
+
                     <hr />
-            
+
                     <label>
                         Type a value here to multply:
                     </label>
-            
+
                     <input type="text"
                             id="multiplyValue"
-                            class="form-control" 
+                            class="form-control"
                             placeholder="{{i18n 'dapp.components.multiplyContract.placeholder'}}" />
-            
+
                     <br />
-                    
+
                     <p>
-                        Multiply Result: 
+                        Multiply Result:
                         <span>{{TemplateVar.get 'multiplyResult'}}</span>
                     </p>
                 {{/if}}
-            
+
                 {{#if isInactive}}
-                    <p class="well well-info">
+                    <p class="ui info message">
                         {{i18n 'dapp.components.multiplyContract.description'}}
                     </p>
-            
-                    <button type="button" class="btn btn-default btn-deploy">
+
+                    <button type="button" class="positive ui button btn-deploy">
                         {{i18n 'dapp.components.multiplyContract.create'}}
                     </button>
                 {{/if}}

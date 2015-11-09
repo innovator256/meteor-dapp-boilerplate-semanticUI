@@ -1,11 +1,12 @@
 <template name="components_balance">
-    <div class="panel panel-default panel-dapp">
-        <div class="panel-heading">
+    <div class="ui segment">
+        <div class="ui header">
             {{i18n 'dapp.components.balance.header'}}
         </div>
-        <div class="panel-body">
-            {{i18n 'dapp.components.balance.original'}}: 
-            <strong>{{ watchBalance }} </strong> ether
+
+        <div class="ui secondary segment">
+          {{i18n 'dapp.components.balance.original'}}:<strong>{{ watchBalance }} </strong> ether
         </div>
+
     </div>
 </template>
