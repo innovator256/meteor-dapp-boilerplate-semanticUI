@@ -71,9 +71,10 @@ Start the app using Meteor
 
     $ cd meteor-dapp-boilerplate-semanticUI/app
     $ meteor
-##<a name="Hosted-Alpha"></a>Hosted Alpha   
+##<a name="Hosted-Alpha"></a>Hosted Alpha     
+
 ----
-meteor-semanticui-dapp-boilerplate.meteor.com   
+[meteor-semanticui-dapp Demo](meteor-semanticui-dapp-boilerplate.meteor.com) 
 
 ## <a name="file-structure"></a> File Structure
 
